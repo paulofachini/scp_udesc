@@ -18,7 +18,7 @@ ini_set("display_errors", 1);
  * Configuration for: Project URL
  * Put your URL here, for local development "127.0.0.1" or "localhost" (plus sub-folder) is fine
  */
-define('URL', 'http://127.0.0.1/php-mvc/');
+define('URL', 'http://local.git/scp_udesc/ponto/');
 
 /**
  * Configuration for: Database
