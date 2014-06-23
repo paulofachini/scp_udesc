@@ -1,4 +1,15 @@
-<div class="container">
-    <h2>You are in the View: application/views/home/index.php (everything in the box comes from this file)</h2>
-    <p>In a real application this could be the homepage.</p>
-</div>
+           <br />
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                Teste
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
