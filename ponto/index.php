@@ -1,5 +1,5 @@
 <?php
-
+    
 /**
  * A simple PHP MVC skeleton
  *
