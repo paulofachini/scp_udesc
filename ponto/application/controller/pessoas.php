@@ -7,7 +7,6 @@ class Pessoas extends Controller {
 	}
 	
 	public function index() {
-<<<<<<< HEAD
 		// load a model.
 		$pessoas_model = $this->loadModel('PessoasModel');
 		$pessoas = $pessoas_model->getAllPessoas();
@@ -88,8 +87,5 @@ class Pessoas extends Controller {
 	
 		// where to go after song has been added
 		header('location: ' . URL . 'pessoas/index');
-=======
-		
->>>>>>> branch 'master' of https://ldebatin@github.com/paulofachini/scp_udesc.git
 	}
 }

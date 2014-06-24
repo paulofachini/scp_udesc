@@ -22,12 +22,9 @@
                                     <a href="<?php echo URL; ?>setores/index">Setor</a>
                                 </li>
                                 <li>
-<<<<<<< HEAD
                                     <a href="<?php echo URL; ?>tipospessoas/index">Tipo de Pessoa</a>
                                 </li>
                                 <li>
-=======
->>>>>>> branch 'master' of https://ldebatin@github.com/paulofachini/scp_udesc.git
                                     <a href="<?php echo URL; ?>pessoas/index">Pessoa</a>
                                 </li>
                             </ul>
