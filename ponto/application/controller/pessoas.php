@@ -3,7 +3,29 @@
 class Pessoas extends Controller {
 	
 	public function login() {
+		// load views.
+		//require 'application/views/_templates/header.php';
+		require 'application/views/pessoas/login.php';
+		//require 'application/views/_templates/footer.php';
+	}
+	
+	public function autentica() {
 		
+		$pessoas_model = $this->loadModel('PessoasModel');
+		$pessoas = $pessoas_model->validaLogin($_POST["email"], $_POST["senha"]);
+		
+		foreach ($pessoas as $pessoa) {
+			$_SESSION['auth'] = true;
+			$_SESSION['perfil']['id']       = $pessoa->id; 
+			$_SESSION['perfil']['nome']     = $pessoa->nome;
+			$_SESSION['perfil']['email']    = $pessoa->email;
+			$_SESSION['perfil']['codinteg'] = $pessoa->codinteg;
+			header('location: ' . URL);
+			exit;
+		}
+		
+		$_SESSION['msg'] = array('cod'=>'alert-danger', 'msg'=>'E-mail ou senha inv&aacute;lido.');
+		header('location: ' . URL . 'pessoas/login');
 	}
 	
 	public function index() {

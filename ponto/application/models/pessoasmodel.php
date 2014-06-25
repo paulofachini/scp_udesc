@@ -87,4 +87,20 @@ class PessoasModel {
 						':id'         => $id
 				));
 	}
+	
+	public function validaLogin($email, $senha) {
+		// trata entrada de dados
+		$email = strip_tags($email);
+		$senha = strip_tags($senha);
+		
+		$sql = "SELECT id, nome, codinteg, email, setor, tipoPessoa
+				FROM pessoas
+				WHERE 
+					email = :email AND
+					password = :senha
+				";
+		$query = $this->db->prepare($sql);
+		$query->execute(array(':email' => $email, ':senha' => sha1($senha)));
+		return $query->fetchAll(); 
+	}
 }

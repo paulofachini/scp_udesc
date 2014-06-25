@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 /**
@@ -18,9 +17,22 @@ class Controller
     function __construct()
     {
     	session_start();
+    	//
+    	if(strrpos($_SERVER['REQUEST_URI'], "pessoas/login")===false && strrpos($_SERVER['REQUEST_URI'], "pessoas/autentica")===false) {
+    		$this->validaSessao();
+    	}
+    	//
         $this->openDatabaseConnection();
+        
     }
 
+    private function validaSessao() {
+    	if($_SESSION['auth'] != true) {
+    		$_SESSION['msg'] = array('cod'=>'alert-danger', 'msg'=>'&Aacute;rea restrita. Login necess&aacute;rio');
+    		header('location: ' . URL . 'pessoas/login');
+    	}
+    }
+    
     /**
      * Open the database connection with the credentials from application/config/config.php
      */
