@@ -22,7 +22,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-heading">
                             <button type="button" class="btn btn-success" onclick="location.href='<?php echo URL; ?>setores/cadastro'">Novo</button>&nbsp;
-                            <button type="button" class="btn btn-primary" onclick="location.href='<?php echo URL; ?>setores/cadastro'">Importar arquivo</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='<?php echo URL; ?>setores/importararquivo'">Importar de arquivo</button>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
