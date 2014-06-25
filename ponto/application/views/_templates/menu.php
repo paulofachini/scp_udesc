@@ -41,7 +41,7 @@
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-wrench fa-fw"></i> Configura&ccedil;&otilde;es</a>
+                            <a href="<?php echo URL; ?>configuracoes/index"><i class="fa fa-wrench fa-fw"></i> Configura&ccedil;&otilde;es</a>
                         </li>
                             <!-- /.nav-second-level -->
                         </li>
