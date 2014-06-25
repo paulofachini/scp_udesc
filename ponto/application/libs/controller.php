@@ -18,7 +18,10 @@ class Controller
     {
     	session_start();
     	//
-    	if(strrpos($_SERVER['REQUEST_URI'], "pessoas/login")===false && strrpos($_SERVER['REQUEST_URI'], "pessoas/autentica")===false) {
+    	if(strrpos($_SERVER['REQUEST_URI'], "pessoas/login")===false 
+    	&& strrpos($_SERVER['REQUEST_URI'], "pessoas/autentica")===false
+		&& strrpos($_SERVER['REQUEST_URI'], "pessoas/logout")===false) 
+    	{
     		$this->validaSessao();
     	}
     	//

@@ -9,6 +9,15 @@ class Pessoas extends Controller {
 		//require 'application/views/_templates/footer.php';
 	}
 	
+	public function logout() {
+		//invalida sessão
+		$_SESSION['auth'] = false;
+		$_SESSION['perfil'] = false; 
+		// dereciona para login.
+		$_SESSION['msg'] = array('cod'=>'alert-info', 'msg'=>'Sess&atilde;o encerrada.');
+		header('location: ' . URL . 'pessoas/login');
+	}
+	
 	public function autentica() {
 		
 		$pessoas_model = $this->loadModel('PessoasModel');

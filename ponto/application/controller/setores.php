@@ -71,4 +71,37 @@ class Setores extends Controller {
 		// where to go after song has been added
 		header('location: ' . URL . 'setores/index');
 	}
+	
+	public function importararquivo() {
+		// load views.
+		require 'application/views/_templates/header.php';
+		require 'application/views/setores/importararquivo.php';
+		require 'application/views/_templates/footer.php';
+	}
+	
+	public function upload() {
+		$targetFolder = URL . 'public/uploads'; // Relative to the root
+	
+		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
+		
+		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
+			$tempFile = $_FILES['Filedata']['tmp_name'];
+			$targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+			$targetFile = rtrim($targetPath,'/') . '/' . $_FILES['Filedata']['name'];
+			
+			// Validate the file type
+			$fileTypes = array('jpg','jpeg','gif','png', 'txt'); // File extensions
+			$fileParts = pathinfo($_FILES['Filedata']['name']);
+			
+			if (in_array($fileParts['extension'],$fileTypes)) {
+				move_uploaded_file($tempFile,$targetFile);
+				echo '1';
+			} else {
+				echo 'Invalid file type.';
+			}
+		}
+		
+		exit;
+	}
+	
 }
