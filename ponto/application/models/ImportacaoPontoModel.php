@@ -16,13 +16,27 @@ class ImportacaoPontoModel {
     }
   }
 
-  public function getAllConfiguracoes()
+  /**
+   * @param $pessoas_id int
+   * @param $batida Datatime
+   */
+  public function addBatida($pessoas_id, $batida)
   {
-    $sql = "SELECT id, chave, valor, label, mascara FROM configuracoes";
+    $sql = "
+          INSERT INTO batida_ponto (bat_dia, situacao, pessoas_id)
+            VALUES ( '".$batida->format('Y-m-d 00:00:00')."', '0', $pessoas_id)
+          ON DUPLICATE KEY UPDATE
+            `bat_dia` =  '".$batida->format('Y-m-d 00:00:00')."'";
     $query = $this->db->prepare($sql);
     $query->execute();
 
-    return $query->fetchAll();
+
+    $sql = "
+      INSERT INTO batida_ponto_hora (hora)
+      VALUES ('".$batida->format('Y-m-d H:i:s')."');";
+
+    $query = $this->db->prepare($sql);
+    $query->execute();
   }
 
 } 

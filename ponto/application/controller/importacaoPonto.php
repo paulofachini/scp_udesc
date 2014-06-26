@@ -13,21 +13,30 @@ class ImportacaoPonto extends Controller
   public function index()
   {
     $importacaoPontoModel = $this->loadModel('ImportacaoPontoModel');
+    $strDir = "../leitora/whipped/";
+    if (is_dir($strDir)) {
+      if ($dh = opendir($strDir)) {
+        while (($file = readdir($dh)) !== false) {
+          if (filetype($strDir . $file) == 'file') {
+            //Paga o conteudo do arquivo
+            $conteudo = file($strDir . $file);
+            $registro = $conteudo[0];
+            $reg = explode(';',$registro);
 
-    if(file_exists("../leitora/horas.txt")){
-      $conteudo = file("../leitora/horas.txt");
-      foreach($conteudo as $registro){
-        $reg = explode(';',$registro);
-        $codPessoa = $reg[0];
-        $horaBatida = $reg[1];
-        $objDate = new DateTime($horaBatida);
-        $importacaoPontoModel->addHora($codPessoa, $objDate);
+            //Paga os registros em cada possição
+            $codPessoa = $reg[0];
+            $horaBatida = $reg[1].' '.$reg[2];
+            $objDate = new DateTime($horaBatida);
+
+            //salva a batida
+            $importacaoPontoModel->addBatida($codPessoa, $objDate);
+
+            //remove o arquivo
+            unlink($strDir . $file);
+          }
+        }
       }
-
     }
-    //$arquivo =
-
-    $ImportacaoPonto = $importacaoPontoModel->getAllConfiguracoes();
   }
 
 }
