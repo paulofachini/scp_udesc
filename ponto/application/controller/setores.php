@@ -82,6 +82,8 @@ class Setores extends Controller {
 	public function upload() {
 		$targetFolder = URL . 'public/uploads'; // Relative to the root
 	
+		echo $targetFolder;
+		
 		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
 		
 		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {

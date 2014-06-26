@@ -5,9 +5,9 @@
 	                	<img src="<?php echo URL; ?>public/img/sisponto.png" alt="sisponto">
                 	</center>
                     <br>
-                    Trabalho Final Módulo 2 UDESC - Pós-Graduação lato sensu em Engenharia de Software.<br>
+                    Trabalho Final M&oacute;dulo 2 UDESC - P&oacute;s-Gradua&ccedil;&atilde;o lato sensu em Engenharia de Software.<br>
                     <br>
-                    Acadêmicos:<br>
+                    Acad&ecirc;micos:<br>
                     Luiz Fernando Debatin (@ldebatin)<br>
                     Marcos Busana (@MarcosBusana)<br>
                     Paulo Luiz Fachini (@paulofachini)<br>

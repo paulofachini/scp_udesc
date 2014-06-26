@@ -23,7 +23,7 @@
 					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
 				},
 				'swf'      : '<?php echo URL; ?>public/swf/uploadify.swf',
-				'uploader' : '<?php echo URL; ?>setores/upload'
+				'uploader' : '<?php echo URL; ?>public/uploadify.php'
 			});
 		});
 	</script>
