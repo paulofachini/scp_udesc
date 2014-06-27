@@ -5,24 +5,32 @@
  * Date: 26/06/14
  * Time: 10:48
  */
+class Marcacoes extends Controller
+{
 
-class Marcacoes {
-
-  public function index()
+    public function index()
   {
     $pessoasModel = $this->loadModel('PessoasModel');
     $arrPessoas = $pessoasModel->getAllPessoas();
     $arrMarcaoes = array();
 
-    if($_POST['idPessoa']){
-      $marcaoesModel = $this->loadModel('MarcacoesModel');
-      $arrMarcaoes = $marcaoesModel->getMarcaoes($_POST['idPessoa'], $_POST['mes'], $_POST['ano']);
-    }
+      $pessoa = $_SESSION['perfil']['id'];
+      $mes = date('m');
+      $ano = date('Y');
+      if (isset($_POST['idPessoa'])) {
+          $pessoa = $_POST['idPessoa'];
+          $mes = $_POST['mes'];
+          $ano = $_POST['ano'];
+      }
 
-    require 'application/views/_templates/header.php';
-    require 'application/views/marcacoes/index.php';
-    require 'application/views/_templates/footer.php';
+      $marcaoesModel = $this->loadModel('MarcacoesModel');
+      $arrMarcaoes = $marcaoesModel->getMarcaoes($pessoa, $mes, $ano);
+      var_dump($arrMarcaoes);
+
+      //require 'application/views/_templates/header.php';
+      //require 'application/views/marcacoes/index.php';
+      //require 'application/views/_templates/footer.php';
   }
 
 
-} 
+}

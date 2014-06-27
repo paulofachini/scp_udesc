@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Configura&ccedil;&#245;es</h1>
+      <h1 class="page-header">Marcacao</h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -22,8 +22,33 @@ if(isset($_SESSION['msg'])) {
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-6">
+              <div style="width: 100px" class="pull-left">
+                  <p>Ano</p>
+                  <select class="form-control">
+                      <option>2014</option>
+                      <option>2013</option>
+                      <option>2012</option>
+                  </select>
+              </div>
+              <div style="width: 100px; margin-left: 20px;" class="pull-left">
+                  <p>M&ecirc;s</p>
+                  <select class="form-control">
+                      <option>Janeiro</option>
+                      <option>Fevereiro</option>
+                      <option>Marco</option>
+                      <option>Abril</option>
+                      <option>Maio</option>
+                      <option>Junho</option>
+                      <option>Julho</option>
+                      <option>Agosto</option>
+                      <option>Setembro</option>
+                      <option>Outubro</option>
+                      <option>Novembro</option>
+                      <option>Dezembro</option>
+                  </select>
+              </div>
 
-            <table class="table table-hover table-striped bold">
+              <table class="table table-hover table-striped bold">
               <thead>
                 <tr>
                   <th>Dia</th>
@@ -39,7 +64,7 @@ if(isset($_SESSION['msg'])) {
               ?>
               <tbody>
                 <tr>
-                  <td colspan="6">8:00</td>
+                    <td colspan="6">nenhum registro</td>
                 </tr>
               </tbody>
 

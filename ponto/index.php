@@ -1,5 +1,4 @@
 <?php
-    
 /**
  * A simple PHP MVC skeleton
  *
@@ -10,6 +9,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
+error_reporting(E_ALL ^ E_NOTICE);
 // load the (optional) Composer auto-loader
 if (file_exists('vendor/autoload.php')) {
     require 'vendor/autoload.php';
