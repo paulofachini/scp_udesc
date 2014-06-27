@@ -25,11 +25,14 @@ class Marcacoes extends Controller
 
       $marcaoesModel = $this->loadModel('MarcacoesModel');
       $arrMarcaoes = $marcaoesModel->getMarcaoes($pessoa, $mes, $ano);
-      var_dump($arrMarcaoes);
+      $intNumeroMaxMarcacao = $marcaoesModel->getNumeMarcacao($pessoa, $mes, $ano);
+      $intNumeroMaxMarcacao = $intNumeroMaxMarcacao->num;
 
-      //require 'application/views/_templates/header.php';
-      //require 'application/views/marcacoes/index.php';
-      //require 'application/views/_templates/footer.php';
+
+
+    require 'application/views/_templates/header.php';
+      require 'application/views/marcacoes/index.php';
+      require 'application/views/_templates/footer.php';
   }
 
 
