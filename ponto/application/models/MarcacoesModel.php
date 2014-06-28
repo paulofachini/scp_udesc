@@ -8,6 +8,10 @@
  */
 class MarcacoesModel
 {
+    /**
+     * @var PDO
+     */
+    private $db;
 
     function __construct($db)
     {
@@ -57,6 +61,48 @@ class MarcacoesModel
         $query = $this->db->prepare($sql);
 
         $query->execute();
-        return $query->fetch();
+
+        return $query->rowCount() ? $query->fetch()->num : 0;
+    }
+
+
+    /**
+     * @param $pessoas_id int
+     * @param $batida Datatime
+     */
+    public function addBatida($pessoas_id, $batida)
+    {
+        $sql = "
+          INSERT INTO batida_ponto (bat_dia, situacao, pessoas_id)
+            VALUES ( '" . $batida->format('Y-m-d 00:00:00') . "', '0', $pessoas_id)
+          ON DUPLICATE KEY UPDATE
+            `bat_dia` =  '" . $batida->format('Y-m-d 00:00:00') . "'";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+
+        $sql = "
+          INSERT INTO batida_ponto_hora (hora, pessoas_id)
+          VALUES ('" . $batida->format('Y-m-d H:i:s') . "', $pessoas_id );";
+
+        $query = $this->db->prepare($sql);
+        $query->execute();
+    }
+
+
+    public function deletaHoras($pessoas_id, $mes, $ano)
+    {
+        $data = new DateTime('' . $ano . '-' . $mes . '-01 00:00:00');
+
+        $sql = "DELETE
+            FROM batida_ponto_hora
+            WHERE
+              pessoas_id = " . $pessoas_id . " AND
+              hora between '" . $data->format('Y-m-d 00:00:00') . "' AND '" . $data->format('Y-m-t 23:59:59') . "'
+              ";
+        $query = $this->db->prepare($sql);
+
+        $query->execute();
+
     }
 }
