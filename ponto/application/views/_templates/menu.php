@@ -38,11 +38,11 @@
                 <a href="<?php echo URL; ?>"><i class="fa fa-bar-chart-o fa-fw"></i> Relat&oacute;rios</a>
             </li>
             <li>
-                <a href="<?php echo URL; ?>Marcacoes/index"><i class="fa fa-table fa-fw"></i> Manuten&ccedil;&atilde;o
+                <a href="<?php echo URL; ?>marcacoes/index"><i class="fa fa-table fa-fw"></i> Manuten&ccedil;&atilde;o
                     de ponto</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="<?php echo URL; ?>registroferias/index"><i class="fa fa-table fa-fw"></i> Registro de f&eacute;rias</a>
             </li>
             <li>
                 <a href="<?php echo URL; ?>configuracoes/index"><i class="fa fa-wrench fa-fw"></i> Configura&ccedil;&otilde;es</a>

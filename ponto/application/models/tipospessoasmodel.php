@@ -10,14 +10,14 @@ class TiposPessoasModel {
 	}
 	
 	public function getAllTiposPessoas() {
-		$sql = "SELECT id, descricao, codinteg FROM tipoPessoas";
+		$sql = "SELECT id, descricao, codinteg FROM tipopessoas";
 		$query = $this->db->prepare($sql);
 		$query->execute();
 		return $query->fetchAll();
 	}
 	
 	public function getTipoPessoaById($id) {
-		$sql = "SELECT id, descricao, codinteg FROM tipoPessoas where id = :id";
+		$sql = "SELECT id, descricao, codinteg FROM tipopessoas where id = :id";
 		$query = $this->db->prepare($sql);
 		$query->execute(array(':id' => $id));
 		return $query->fetchAll();
@@ -28,14 +28,14 @@ class TiposPessoasModel {
 		$descricao = strip_tags($descricao);
 		$codinteg = strip_tags($codinteg);
 	
-		$sql = "INSERT INTO tipoPessoas (descricao, codinteg) VALUES (:descricao, :codinteg)";
+		$sql = "INSERT INTO tipopessoas (descricao, codinteg) VALUES (:descricao, :codinteg)";
 		$query = $this->db->prepare($sql);
 		$query->execute(array(':descricao' => $descricao, ':codinteg' => $codinteg));
 	}
 	
 	public function deleteTipoPessoa($id)
 	{
-		$sql = "DELETE FROM tipoPessoas WHERE id = :id";
+		$sql = "DELETE FROM tipopessoas WHERE id = :id";
 		$query = $this->db->prepare($sql);
 		$query->execute(array(':id' => $id));
 	}
@@ -46,7 +46,7 @@ class TiposPessoasModel {
 		$descricao = strip_tags($descricao);
 		$codinteg = strip_tags($codinteg);
 	
-		$sql = "UPDATE tipoPessoas set descricao = :descricao, codinteg = :codinteg WHERE id = :id";
+		$sql = "UPDATE tipopessoas set descricao = :descricao, codinteg = :codinteg WHERE id = :id";
 		$query = $this->db->prepare($sql);
 		$query->execute(array(':descricao' => $descricao, ':codinteg' => $codinteg, ':id' => $id));
 	}
