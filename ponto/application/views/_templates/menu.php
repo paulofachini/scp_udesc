@@ -27,6 +27,9 @@
                     <li>
                         <a href="<?php echo URL; ?>pessoas/index">Pessoa</a>
                     </li>
+                    <li>
+                        <a href="<?php echo URL; ?>calendarioferiados/index">Cadastro de feri&aacute;dos</a>
+                    </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>

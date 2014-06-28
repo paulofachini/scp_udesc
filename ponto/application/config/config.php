@@ -26,6 +26,6 @@ define('URL', 'http://local.git/scp_udesc/ponto/');
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'ponto');
+define('DB_NAME', 'ponto2');
 define('DB_USER', 'root');
 define('DB_PASS', '');
