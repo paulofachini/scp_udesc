@@ -34,8 +34,8 @@ class ImportacaoPontoModel
 
 
         $sql = "
-      INSERT INTO batida_ponto_hora (hora, pessoas_id)
-      VALUES ('" . $batida->format('Y-m-d H:i:s') . "', $pessoas_id );";
+          INSERT INTO batida_ponto_hora (hora, pessoas_id)
+          VALUES ('" . $batida->format('Y-m-d H:i:s') . "', $pessoas_id );";
 
         $query = $this->db->prepare($sql);
         $query->execute();
