@@ -127,7 +127,7 @@ if(isset($_SESSION['msg'])) {
                       }
 
                     }
-                    $totalHorasMes = ($intervalo) ? addHora($totalHorasMes, $intervalo) : $intervalo;
+                      $totalHorasMes = ($intervalo && $totalHorasMes) ? addHora($totalHorasMes, $intervalo) : $intervalo;
                   }else{
                     $intervalo = '00:00';
                   }
