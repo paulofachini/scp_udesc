@@ -23,31 +23,36 @@ if(isset($_SESSION['msg'])) {
         <div class="row">
           <div class="col-lg-6" style="width: 100%">
             <div style="margin-bottom: 100px">
-              <div style="width: 100px" class="pull-left">
-                  <p>Ano</p>
-                  <select class="form-control">
-                      <option>2014</option>
-                      <option>2013</option>
-                      <option>2012</option>
-                  </select>
-              </div>
-              <div style="width: 100px; margin-left: 20px;" class="pull-left">
-                  <p>M&ecirc;s</p>
-                  <select class="form-control">
-                      <option>Janeiro</option>
-                      <option>Fevereiro</option>
-                      <option>Marco</option>
-                      <option>Abril</option>
-                      <option>Maio</option>
-                      <option>Junho</option>
-                      <option>Julho</option>
-                      <option>Agosto</option>
-                      <option>Setembro</option>
-                      <option>Outubro</option>
-                      <option>Novembro</option>
-                      <option>Dezembro</option>
-                  </select>
-              </div>
+                <form action="<?php echo URL; ?>Marcacoes/index" method="post">
+                    <div style="width: 100px" class="pull-left">
+                        <p>Ano</p>
+                        <select class="form-control" name="ano">
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                        </select>
+                    </div>
+                    <div style="width: 100px; margin-left: 20px;" class="pull-left">
+                        <p>M&ecirc;s</p>
+                        <select class="form-control" name="mes">
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Marco</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </div>
+                    <div style="width: 100px; margin-left: 20px; padding-top: 20px;" class="pull-left">
+                        <input type="submit" value="Buscar" class="btn btn-lg btn-success"/>
+                    </div>
+                </form>
             </div>
             <table class="table table-hover table-striped bold" style="width: 100%">
               <?php
